@@ -1,0 +1,370 @@
+Panic! Indians! Scope 
+Volcanic Barrel Dynamite 
+Beer Panic! Jail 
+Mustang Beer General Store 
+Beer Bang! Saloon 
+Volcanic Jail General Store 
+Mustang Barrel Jail 
+Gatling General Store Bang! 
+Indians! Bang! Dynamite 
+Volcanic Mustang Barrel 
+Barrel Beer Indians! 
+Scope General Store Bang! 
+Barrel Dynamite Saloon 
+Scope Bang! Saloon 
+Mustang Cat Balou Duel 
+Mustang Scope General Store 
+Volcanic Indians! Missed! 
+Barrel Gatling Dynamite 
+Volcanic Gatling Cat Balou 
+Barrel Cat Balou Bang! 
+Panic! Scope Missed! 
+Gatling Panic! Missed! 
+Beer General Store Scope 
+Indians! Jail Saloon 
+Mustang Jail Dynamite 
+Cat Balou Dynamite Saloon 
+Mustang Panic! Dynamite 
+Panic! Indians! General Store 
+Volcanic Beer Panic! 
+Mustang Missed! Scope 
+Beer Cat Balou General Store 
+Missed! Duel Dynamite 
+Indians! Jail Dynamite 
+Barrel Duel General Store 
+Gatling Cat Balou Jail 
+Barrel Indians! Jail 
+Volcanic Beer Panic! 
+Mustang Bang! Dynamite 
+Volcanic Beer Jail 
+Volcanic Mustang Scope 
+Missed! Dynamite Saloon 
+Volcanic Barrel General Store 
+Barrel Bang! Dynamite 
+Panic! Scope Saloon 
+General Store Duel Dynamite 
+Barrel Duel Dynamite 
+Barrel Jail Dynamite 
+Barrel Bang! Duel 
+Barrel Gatling Missed! 
+General Store Missed! Duel 
+Barrel Indians! Missed! 
+Scope Duel Saloon 
+Volcanic Beer Scope 
+Mustang Beer Duel 
+General Store Missed! Bang! 
+Volcanic Gatling Jail 
+Barrel Missed! Saloon 
+Gatling Beer Saloon 
+Beer Indians! Scope 
+Indians! Cat Balou Saloon 
+Beer Bang! Duel 
+Scope Jail Dynamite 
+Panic! Scope Bang! 
+Barrel Panic! Bang! 
+Gatling Indians! General Store 
+General Store Duel Saloon 
+Cat Balou Saloon Dynamite 
+Mustang Beer Panic! 
+Panic! Indians! Duel 
+Volcanic Scope Bang! 
+Gatling Bang! Saloon 
+Scope General Store Saloon 
+Panic! Gatling Dynamite 
+Gatling Jail Scope 
+Mustang Indians! Dynamite 
+Mustang Scope Missed! 
+Volcanic General Store Missed! 
+Cat Balou Missed! Dynamite 
+Beer Barrel Saloon 
+Volcanic Mustang Jail 
+Volcanic Scope Missed! 
+Volcanic Scope General Store 
+Volcanic Jail Missed! 
+Indians! Bang! Duel 
+Panic! General Store Bang! 
+Barrel Gatling Bang! 
+Barrel Cat Balou Indians! 
+Mustang Barrel Cat Balou 
+Mustang Beer Indians! 
+Indians! Jail Saloon 
+Mustang Beer General Store 
+Beer Indians! Missed! 
+Gatling Scope Bang! 
+Barrel Scope General Store 
+Mustang Gatling Dynamite 
+
+[['Bang!', 192], ['Missed!', 196], ['Beer', 182], ['Duel', 0], ['Cat Balou', 0], ['Panic!', 0], ['Indians!', 0], ['Gatling', 0], ['Saloon', 0], ['General Store', 0], ['Volcanic', 0], ['Mustang', 0], ['Jail', 0], ['Barrel', 0], ['Scope', 0], ['Dynamite', 0]]
+
+Mustang Beer Jail 
+Beer Panic! Scope 
+Volcanic Indians! Jail 
+Volcanic Gatling Duel 
+Barrel Indians! Jail 
+
+[['Bang!', 0], ['Missed!', 0], ['Beer', 4], ['Duel', 3], ['Cat Balou', 0], ['Panic!', 5], ['Indians!', 12], ['Gatling', 7], ['Saloon', 0], ['General Store', 0], ['Volcanic', 20], ['Mustang', 11], ['Jail', 36], ['Barrel', 13], ['Scope', 14], ['Dynamite', 0]]
+
+Barrel Gatling Jail 
+Mustang General Store Saloon 
+Beer Panic! Gatling 
+Barrel Bang! Saloon 
+Cat Balou Missed! 
+[['Bang!', 0], ['Missed!', 0], ['Beer', 0], ['Duel', 0], ['Cat Balou', 0], ['Panic!', 0], ['Indians!', 0], ['Gatling', 0], ['Saloon', 0], ['General Store', 0], ['Volcanic', 0], ['Mustang', 0], ['Jail', 0], ['Barrel', 0], ['Scope', 0], ['Dynamite', 0]]
+
+Barrel Cat Balou Dynamite 
+Barrel Cat Balou Scope 
+General Store Scope Duel 
+Beer Jail Duel 
+Scope General Store Bang! 
+Indians! Cat Balou Dynamite 
+Mustang Cat Balou Bang! 
+Mustang Panic! Indians! 
+Indians! Jail Duel 
+Beer Jail General Store 
+Volcanic Mustang Indians! 
+Mustang Missed! Saloon 
+Panic! Jail Bang! 
+Beer Barrel Dynamite 
+Volcanic Beer Saloon 
+Volcanic Mustang Scope 
+Duel General Store Saloon 
+Beer General Store Dynamite 
+Cat Balou Scope Saloon 
+Indians! Scope Bang! 
+Volcanic Panic! Dynamite 
+Panic! Indians! Scope 
+Beer Duel Dynamite 
+Panic! Jail Dynamite 
+Barrel Jail Missed! 
+Scope Bang! Saloon 
+Volcanic Beer Missed! 
+Indians! Scope Duel 
+Volcanic Panic! General Store 
+Mustang Cat Balou Bang! 
+Mustang Beer Scope 
+Beer Indians! Scope 
+Panic! General Store Bang! 
+Panic! Gatling Indians! 
+Gatling Scope Dynamite 
+Panic! Cat Balou Dynamite 
+Beer Cat Balou Gatling 
+Gatling Indians! Jail 
+Indians! Jail Saloon 
+Cat Balou Scope General Store 
+Volcanic Indians! Duel 
+Volcanic Scope Dynamite 
+Volcanic Barrel Scope 
+Indians! Scope Saloon 
+Jail Bang! Dynamite 
+Mustang Gatling Scope 
+Panic! Cat Balou Missed! 
+Mustang Scope Dynamite 
+Cat Balou General Store Dynamite 
+Gatling Cat Balou Jail 
+Panic! Jail Scope 
+Barrel Cat Balou Dynamite 
+Jail Missed! Bang! 
+Volcanic Beer Gatling 
+Duel Saloon Dynamite 
+Mustang Indians! General Store 
+Mustang Panic! Scope 
+Gatling Jail Missed! 
+Mustang Saloon Dynamite 
+Barrel General Store Missed! 
+Cat Balou General Store Missed! 
+Volcanic Beer Barrel 
+Barrel Gatling Indians! 
+Mustang Barrel Saloon 
+Volcanic Mustang Scope 
+Duel Saloon Dynamite 
+Beer Mustang Scope 
+Beer Indians! Bang! 
+Duel General Store Dynamite 
+Barrel Panic! Indians! 
+Gatling Panic! Scope 
+Beer Barrel Dynamite 
+Indians! General Store Bang! 
+Barrel Indians! Bang! 
+Barrel General Store Missed! 
+Volcanic Panic! Missed! 
+Volcanic Missed! Dynamite 
+Barrel Missed! Dynamite 
+Barrel Missed! Saloon 
+Panic! Jail Missed! 
+Panic! Bang! Scope 
+Beer Cat Balou Panic! 
+Volcanic Indians! Duel 
+Panic! Indians! Duel 
+Volcanic Panic! Saloon 
+Volcanic Gatling Panic! 
+Barrel Indians! Saloon 
+Beer Panic! Saloon 
+Mustang Missed! Saloon 
+Volcanic General Store Bang! 
+Barrel Panic! Cat Balou 
+Indians! Duel Saloon 
+Volcanic Jail Bang! 
+Barrel Jail Scope 
+Mustang Scope Saloon 
+Volcanic General Store Bang! 
+Cat Balou Scope Dynamite 
+Volcanic Barrel Scope 
+Indians! Missed! Duel 
+Volcanic Gatling Duel 
+
+[['Bang!', 0], 
+['Missed!', 16], 
+['Beer', 34], 
+['Duel', 45], 
+['Cat Balou', 68], 
+['Panic!', 115], 
+['Indians!', 144], 
+['Gatling', 84], 
+['Saloon', 144], 
+['General Store', 153], 
+['Volcanic', 220], 
+['Mustang', 187], 
+['Jail', 192], 
+['Barrel', 260], 
+['Scope', 392], 
+['Dynamite', 330]]
+
+
+-----------------------------------------
+2018-10-05 20:06:24.466143
+Volcanic Barrel Dynamite 
+Panic! Gatling Jail 
+Mustang Panic! Duel 
+Panic! Duel Dynamite 
+Volcanic Barrel Saloon 
+Volcanic Barrel Scope 
+Scope Gatling Saloon 
+Beer Gatling Duel 
+Beer Cat Balou Bang! 
+Mustang Gatling Scope 
+Jail Bang! Duel 
+Bang! Duel Dynamite 
+Volcanic Cat Balou Dynamite 
+Volcanic Beer Cat Balou 
+Volcanic Scope Duel 
+Barrel Gatling Dynamite 
+Panic! Scope Bang! 
+Mustang General Store Dynamite 
+Barrel Panic! Cat Balou 
+Gatling Missed! Duel 
+Missed! Saloon Dynamite 
+Beer General Store Bang! 
+Beer Gatling Saloon 
+Indians! Jail Duel 
+Barrel General Store Duel 
+Volcanic Beer Dynamite 
+Volcanic Mustang Bang! 
+Volcanic Scope Missed! 
+Bang! Duel Saloon 
+Gatling General Store Duel 
+Duel Saloon Dynamite 
+Mustang Indians! Missed! 
+Beer Missed! Duel 
+Cat Balou Scope Missed! 
+Barrel Jail Missed! 
+Missed! Duel Saloon 
+Cat Balou Missed! Dynamite 
+Volcanic General Store Saloon 
+Cat Balou Scope General Store 
+Gatling Jail Dynamite 
+Beer Cat Balou Dynamite 
+Jail General Store Dynamite 
+Mustang Gatling Jail 
+Indians! Cat Balou Scope 
+Indians! Missed! Bang! 
+Beer Panic! Indians! 
+Barrel General Store Bang! 
+Mustang General Store Dynamite 
+Beer Mustang Gatling 
+Mustang General Store Missed! 
+Barrel Scope Bang! 
+Beer Cat Balou Jail 
+Mustang Duel Dynamite 
+Mustang Indians! Saloon 
+Gatling Duel Saloon 
+Indians! General Store Duel 
+Mustang Indians! Jail 
+Beer Jail Missed! 
+Beer Cat Balou Bang! 
+Gatling Cat Balou Bang! 
+Barrel Indians! Cat Balou 
+Cat Balou Indians! Scope 
+Beer Jail Duel 
+General Store Saloon Dynamite 
+Panic! Gatling Duel 
+Volcanic Jail Dynamite 
+Barrel General Store Saloon 
+Barrel Indians! Missed! 
+Gatling Scope General Store 
+Indians! Bang! Saloon 
+Volcanic Cat Balou Jail 
+Beer Jail Scope 
+Volcanic Bang! Saloon 
+Beer Cat Balou Duel 
+Volcanic Jail Missed! 
+Indians! Gatling General Store 
+Barrel Bang! Duel 
+Barrel Panic! Duel 
+Cat Balou Scope Saloon 
+Mustang Beer Gatling 
+Mustang Scope Bang! 
+Barrel Gatling Duel 
+Gatling Missed! Saloon 
+Mustang Scope Dynamite 
+Indians! Bang! Dynamite 
+Volcanic Mustang Scope 
+Barrel Bang! Duel 
+Scope General Store Bang! 
+Gatling Indians! Scope 
+Volcanic Panic! Jail 
+Beer Missed! Dynamite 
+Barrel Gatling Panic! 
+Panic! Indians! Bang! 
+Jail General Store Dynamite 
+Mustang General Store Saloon 
+Jail Scope Dynamite 
+Panic! Scope Bang! 
+Indians! Cat Balou Bang! 
+Barrel Beer Gatling 
+Indians! General Store Saloon 
+
+Wells Fargo             100%++
+Stage coach             100%+
+0 Volcanic 0            100%
+3 Barrel 0.167          91.85%
+3 Mustang 0.176         91.2%
+4 Beer 0.211            89.45%
+10 Indians! 0.556       72.2% 
+7 Panic! 0.583          70.85%
+17 Gatling 0.773        61.35%
+16 Cat Balou 0.889      55.55%
+21 General Store 1.105  44.75%
+20 Jail 1.111           44.45%
+26 Scope 1.238          38.1%
+22 Missed! 1.375        31.25%
+34 Bang! 1.525          23.75%
+40 Duel 1.667           16.65%
+33 Saloon 1.833         8.35%
+44 Dynamite 2           0%
+
+[['Bang!', 34, 22],
+ ['Missed!', 22, 16],
+ ['Beer', 4, 19],
+ ['Duel', 40, 24],
+ ['Cat Balou', 16, 18],
+ ['Panic!', 7, 12],
+ ['Indians!', 10, 18],
+ ['Gatling', 17, 22],
+ ['Saloon', 33, 18],
+ ['General Store', 21, 19],
+ ['Volcanic', 0, 16],
+ ['Mustang', 3, 17],
+ ['Jail', 20, 18],
+ ['Barrel', 3, 18],
+ ['Scope', 26, 21],
+ ['Dynamite', 44, 22]]
