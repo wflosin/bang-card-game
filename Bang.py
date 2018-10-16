@@ -1,6 +1,14 @@
 #Bang!
-import random, time, pygame
+#check if the modules are imported, and if they aren'tm import them
+from sys import modules
+if 'random' not in modules:
+	import random
+if 'time' not in modules:
+	import time
+if 'pygame' not in modules:
+	import pygame	
 from operator import itemgetter
+from collections import Counter
 #sheriff, renegade, outlaw, outlaw, deputy, outlaw, deputy
 
 def main():
@@ -85,10 +93,11 @@ def main():
 			self.br_cards = ["Bang!", "Missed!", "Beer", "Duel", "Cat Balou", "Panic!", "Indians!", "Gatling", "Saloon", "General Store", "Stagecoach", "Wells Fargo", "Jail"]
 			self.bl_cards = ["Volcanic", "Schofield", "Remington", "Rev. Carabine", "Winchester", "Mustang", "Barrel", "Scope", "Dynamite", "Colt .45"]
 			self.guns = ['Volcanic', 'Schofield', 'Remington', 'Rev. Carabine', 'Winchester', 'Colt .45']
-			self.card_value = {"Bang!":1, "Missed!":1, "Beer":4, "Duel":1, "Cat Balou":3, "Panic!":3, "Indians!":2, "Gatling":2, 
-							   "Saloon":1, "General Store":2, "Stagecoach":5, "Wells Fargo":7, "Jail":3,
-							   "Volcanic":6, "Schofield":1, "Remington":2, "Rev. Carabine":3, "Winchester":4, 
-							   "Mustang":5, "Barrel":5, "Scope":5, "Dynamite":1}
+			self.card_value = {"Bang!":24, "Missed!":31, "Beer":89, "Duel":17, "Cat Balou":56, "Panic!":71, "Indians!":72, "Gatling":61, 
+							   "Saloon":8, "General Store":45, "Stagecoach":101, "Wells Fargo":101, "Jail":44,
+							   "Volcanic":100, "Schofield":0, "Remington":0, "Rev. Carabine":0, "Winchester":0, 
+							   "Mustang":92, "Barrel":91, "Scope":38, "Dynamite":0}
+			self.num_of_cards = 22
 
 		def pre_card(self, card_num, target=None):
 			#discard refresh
@@ -241,6 +250,8 @@ def main():
 				else:
 					message("%s has no cards left!"%game_char[1][target][1])
 
+			###AI for computer's turn###
+
 			return (0, blue_cards)
 
 		def jail(self, card_num=None, target=None):
@@ -281,7 +292,7 @@ def main():
 			for i in range(3): self.give_card(turn)
 			pygame.display.update(cards_rect) 
 
-		def indians_gatling(card_num, card_played, lives):
+		def indians_gatling(self, card_num, card_played, lives):
 			self.pre_card(card_num)
 			for target in range(plnum):
 				if target == turn:
@@ -307,56 +318,156 @@ def main():
 					else:
 						self.hit(target, lives)
 
-		def saloon(card_num):
+		def saloon(self, card_num):
 			self.pre_card(card_num)
 			for target in range(plnum):
 				if lives[target] != game_char[1][target][0]:
 					lives += 1
 
-		def general_store(card_num):
+		def general_store(self, card_num):
+			#decrease the bias of volcanic, mustang, and barrel so that the AI can prioritize defense 
+			def vol_must_bar_bias(store_bias):
+				if 'Volcanic' in store_bias[0]:
+					store_bias = store_bias('Volcanic', -14, store_bias)
+				if 'Barrel' in store_bias[0]:
+					store_bias = store_bias('Barrel', -15, store_bias)
+				if 'Mustang' in store_bias[0]:
+					store_bias = store_bias('Mustang', -16, store_bias)
+				return store_bias
+			#for the general store, to add and subtract bias to cards found in the store. take into account repeated cards
+			def store_bias(self, name, number, store_bias):
+				#store_bias = [[bang bang],[89 89]]
+				for i in range(len(store_bias[0])):
+					if store_bias[0][i] == name:
+						store_bias[1][i] += number
+				return store_bias
+
 			self.pre_card(card_num)
+			#makes a list of cards that are in the store
 			store = [deck[i] for i in range(plnum)]
+			store_const = store
 			store_turn = turn
 			del deck[:plnum]
+			card_picked = [[] for i in range(plnum)]
+			store_card_names = [*map(itemgetter(0), store)]
 			#store_text = [gamefont.render("%s, "%store[i],0,(0,0,0)) for i in range(plnum)]
 			store_text = gamefont.render("General Store: ", 0, (0,0,0))
 			screen.blit(store_text, (17, 590))
 			pygame.draw.rect(screen, background, (15,590,1200,30))
 
-			#displays the general store cards
-			store_width = store_text.get_width()
-			click = [store_width+17]
-			for i in range(plnum):
-				if i == plnum:
-					store_cards = gamefont.render(str(store[i]), 0, (0,0,0))
+			#general store loop
+			for index in range(plnum):
+				#displays the general store cards
+				store_width = store_text.get_width()
+				click = [store_width+17]
+				for i in range(plnum):
+					if i == plnum:
+						store_cards = gamefont.render(str(store[i]), 0, (0,0,0))
+					else:
+						store_cards = gamefont.render("%s, "%str(store[i]), 0, (0,0,0))
+					screen.blit( store_cards, (in_hand_width,760) )
+					in_hand_width += store_cards.get_width() #+12
+					click.append(store_width)
+
+				#your turn to pick a card
+				if store_turn == 0:
+					store_click_spots = click_spot(click)
+					card_num = events(0, store_click_spots)
+					in_hand[0].append(store[card_num])
+					del store[card_num]
+					card_picked[store_turn] = store[card_num][0]
+
+
+				#AI computer's turn to pick a card
 				else:
-					store_cards = gamefont.render("%s, "%str(atore[i]), 0, (0,0,0))
-				screen.blit( store_cards, (in_hand_width,760) )
-				in_hand_width += store_cards.get_width() #+12
-				click.append(store_width)
+					""" The AI algorithm
+					-takes the dictionary entries of the cards that are in "store"
+					-if statemets for Bang!, Missed!, beer, Saloon?, guns, blue cards they already have
+					-Takes the highest value and the AI picks that card
+					-display stuff
+					"""
+					##store_bias = [[bang bang],[89 89]]
+					#store = [(beer,,),(Bang!,,)]
+					store_bias_name = [store[i][0] for i in range(len(store))]
+					store_bias_n =  [self.card_value[store[i][0]] for i in range(len(store))]
+					store_bias = [store_bias_name, store_bias_n]
+					 
+					#the individual names of the card that they have in their hand
+					hand_card_names = [*map(itemgetter(0), in_hand[store_turn])]
+					#how many of each card do you have in your hand?
+					hand_n_cards = dict(Counter(hand_card_names))
 
-			#your turn to pick a card
-			if store_turn == 0:
-				store_click_spots = click_spot(click)
-				card_num = events(0, store_click_spots)
-				in_hand[0].append(store[card_num])
-				del store[card_num]
-				store_turn += 1
-			#AI computer's turn to pick a card
-			else:
-				store_bias = [self.card_value[deck[i][0]] for i in range(len(store))] 
-				#card_names = [*map(itemgetter(0), in_hand[store_turn])]
-				
-				#inc bias if CPU has no bangs
-				for i in range(len(store)):
-					for j in range(len(in_hand[store_turn])):
-						if in_hand[store_turn][i][0] != "Bang!":
-							store_bias[store.index("Bang!")] += 3
-							bang_bias = 1
+					blue_cards_names = [*map(itemgetter(0), blue_cards[store_turn])]
 
+					#if statements that change the bias for Bang!, Missed!, beer, Saloon?, guns, blue cards they already have
+					#Bang!
+					if 'Bang!' in store_card_names:
+						if hand_n_cards['Bang!'] == 0:
+							if 'Indians!'in store_const:
+								if lives[store_turn] > 3 and 'Beer' not in hand_card_names:
+									store_bias[1][store_bias[0].index('Bang!')] += 33
+								elif lives[store_turn] == 1:
+									if turn == store_turn or 'Indians!' in card_picked:
+										store_bias[1][store_bias[0].index('Bang!')] += 64
+										store_bias = vol_must_bar_bias(store_bias)
 
+					if 'Missed!' in store_card_names:
+						if hand_n_cards['Missed!'] == 0:
+							if lives[store_turn] > 3 and 'Beer' not in hand_card_names:
+								store_bias[1][store_bias[0].index('Missed!')] += 27
+							elif lives[store_turn] == 1:
+								store_bias[1][store_bias[0].index('Missed!')] += 57
+								store_bias = vol_must_bar_bias(store_bias)
 
-			
+					if 'Beer' in store_card_names:
+						#if the AI is at max life or if AI has enough beers to get to max life -1
+						if (lives[store_turn] == game_char[1][store_turn][0]) or ((hand_n_cards['Beer'] + lives[store_turn] >= game_char[1][store_turn][0]-1) and game_char[1][store_turn][0] != 3): 
+							store_bias = store_bias('Beer', -34, store_bias)
+						if lives[store_turn] == 1:
+							store_bias = vol_must_bar_bias(store_bias)
+							store_bias = store_bias('Stagecoach', -13, store_bias)
+
+					if 'Saloon' in store_card_names:
+						if store_turn == turn+1 and lives[store_turn] == 1:
+							store_bias[1][store_bias[0].index('Saloon')] += 81
+
+					if 'Scope' in store_card_names:
+						if blue_cards_names[0] == 'Volcanic': ###Include player bias###
+							#just below volcanic if bang/missed biases have been raised
+							store_bias[1][store_bias[0].index('Saloon')] += 49
+
+					for i in range(len(store_card_names)):
+						for j in range(len(blue_cards_names)):
+							if blue_cards_names[j] == store_card_names[i]:
+								store_bias[1][i] = 0
+					[store_bias[1][i]*0 for i in range(len(store_card_names)) for j in range(len(blue_cards_names)) if blue_cards_names[j] == store_card_names[i]]
+						###considers the bias of the people after them, if they are friendly, let them take the copy of the blue card
+						###otherwise, take the duplicate
+
+					#selects the highest bias card
+					store_n_max = store_bias[1].index(max(store_bias[1]))
+					###display what card they took###
+					in_hand[store_turn].append(store[store_n_max])
+					del store[store_n_max]
+					del store_bias[store_n_max]
+					card_picked[store_turn] = store[card_num][0]
+					"""
+					#inc bias if CPU has no bangs
+					for i in range(len(store)):
+						for j in range(len(in_hand[store_turn])):
+							
+
+							if in_hand[store_turn][j][0] != "Bang!":
+								store_bias[store.index("Bang!")] += 3
+					"""			
+
+				#end of the loop, change the turn to the next player 
+				if store_turn != plnum:
+					store_turn += 1
+				else: 
+					store_turn = 0
+		
+
 
 		def give_card(self, player_number):
 			#print(in_hand, deck)
@@ -460,6 +571,11 @@ def main():
 		pygame.draw.rect(screen, background, text_rect)
 		pygame.display.update(text_rect)
 
+	def gun_range(turn, target):
+		gun_range_list = list(range(1,((plnum-1)//2)+1)) + list(range(plnum//2,0,-1))
+		gun_range = gun_range_list[abs(turn-target)-1]
+		return gun_range
+
 	def preparation():
 		global cards
 		cards = cards_()
@@ -552,9 +668,12 @@ def main():
 		global blue_cards
 		blue_cards = [[("Colt .45","","")] for i in range(plnum)]
 
+		"""
 		lives = ["" for i in range(plnum)]
 		for i in range(plnum):
 			lives[i] = game_char[1][i][0]
+		"""
+		lives = [game_char[1][i][0] for i in range(plnum)]
 
 		#screen initialization
 		(width, height) = (1250,800)
@@ -1129,7 +1248,7 @@ def main():
 	
 	
 	if game() == 0:
-		global blue_cards, turn, plnum, game_char, disacrd, your_turn, in_hand, gun_range, screen, background, game_font, buttons, running
+		global blue_cards, turn, plnum, game_char, disacrd, your_turn, in_hand, screen, background, game_font, buttons, running
 		blue_cards=turn=plnum=game_char=disacrd=your_turn=in_hand=gun_range=screen=background=game_font=buttons = None
 		running = True
 		a = 1
